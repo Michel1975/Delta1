@@ -42,6 +42,7 @@ class MembersController < ApplicationController
   def create
     @merchant = Merchant.find(params[:merchant_id])
     @member = @merchant.members.create(params[:member])
+    #MemberMailer.registration_confirmation(@member).deliver
     redirect_to merchant_path(@merchant)
   end
 

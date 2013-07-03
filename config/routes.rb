@@ -4,6 +4,7 @@ Delta1::Application.routes.draw do
   resources :merchants do
     resources :members
   end
+  
   resources :offers
 
   resources :promotions

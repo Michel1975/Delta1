@@ -21,8 +21,16 @@
 </p>
 
 <p>
-  <b>Describtion:</b>
+  <b>Description:</b>
   <%= @merchant.describtion %>
+</p>
+<p>
+  <b>Latitude:</b>
+  <%= @merchant.latitude %>
+</p>
+<p>
+  <b>Longitude:</b>
+  <%= @merchant.longitude %>
 </p>
 
 <h2>Members</h2>
@@ -72,7 +80,7 @@
   <div class="field">
     <%= f.label :gender %><br />
     <%= f.text_area :gender %>
-  </div>
+  </div>  
   <div class="actions">
     <%= f.submit %>
   </div>

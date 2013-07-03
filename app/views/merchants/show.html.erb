@@ -51,6 +51,16 @@
   </p>
 <% end %>
 
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@merchant.latitude}%2C#{@merchant.longitude}" %>
+
+<h3>Nearby locations</h3>
+<ul>
+<% for merchant in @merchant.nearbys(10) %>
+  <li><%= link_to merchant.street, merchant %> (<%= merchant.distance.round(2) %> miles)</li>
+<% end %>
+</ul>
+
+
 <h2>Add a member:</h2>
 <%= form_for([@merchant, @merchant.members.build]) do |f| %>
   <div class="field">

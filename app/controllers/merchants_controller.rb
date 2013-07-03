@@ -3,6 +3,11 @@ class MerchantsController < ApplicationController
   # GET /merchants.json
   def index
     @merchants = Merchant.all
+    if params[:search].present?
+      @merchants = Merchant.near(params[:search], 50, :order => :distance)
+    else
+      @merchants = Merchant.all
+  end
 
     respond_to do |format|
       format.html # index.html.erb
